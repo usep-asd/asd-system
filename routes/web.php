@@ -19,6 +19,12 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+Route::get('/rrf', 'RequestController@rrf')->name('rrf');
+Route::get('/srf-ict', 'RequestController@srf_ict')->name('srf-ict');
+Route::get('/srf-vhc', 'RequestController@srf_vhc')->name('srf-vhc');
+Route::get('/wfe-pm', 'RequestController@wfe_pm')->name('wfe-pm');
+Route::get('/wfe-lab', 'RequestController@wfe_lab')->name('wfe-lab');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/request', 'HomeController@request')->name('request');
 Route::get('/about', 'HomeController@about')->name('about');

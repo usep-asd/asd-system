@@ -1,113 +1,60 @@
-@extends('layouts.admin')
+ @extends('layouts.admin')
 
 @section('main-content')
     <!-- Page Heading -->
+    <style>
+        a.custom-card,
+        a.custom-card:hover {
+            color: inherit;
+        }
+    </style>
+
     <h1 class="h3 mb-4 text-gray-800">{{ __('Request') }}</h1>
 
     <div class="row justify-content-center">
-
-        <div class="col-lg-8 order-lg-1">
-
-            <div class="card shadow mb-4">
-
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Request Form</h6>
-                </div>
-
+        <div class="col-lg-8 order-lg-1 card-group row justify-content-between">
+            <a href="{{ route('rrf') }}" class="custom-card">
+            <div class="card" style="width: 18rem; display: inline-block">
                 <div class="card-body">
-
-                    <form method="POST" action="" autocomplete="off">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                        <input type="hidden" name="_method" value="PUT">
-
-                        <h6 class="heading-small text-muted mb-4">Request information</h6>
-
-                        <div class="pl-lg-4">
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="Title">Title<span class="small text-danger">*</span></label>
-                                        <input type="email" id="email" class="form-control" placeholder="Item/Desc./Request/Location" value="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="item">Item<span class="small text-danger">*</span></label>
-                                        <input type="text" id="name" class="form-control" name="name" placeholder="Ex. Table, Mouse, Monitor" value="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="type">Type</label>
-                                        <select class="form-control">
-                                            <option hidden>Select Nature of Request</option>
-                                            <option>Electrical</option>
-                                            <option>Mechanical</option>
-                                            <option>Plumbing</option>
-                                            <option>Carpentry</option>
-                                          </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="quantity">Quantity</label>
-                                        <input type="number" id="quantity" class="form-control" name="quantity" placeholder="# of Items">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="details">Details<span class="small text-danger">*</span></label>
-                                        <textarea class="form-control" rows="5" id="details"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {{-- <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="current_password">Current password</label>
-                                        <input type="password" id="current_password" class="form-control" name="current_password" placeholder="Current password">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="new_password">New password</label>
-                                        <input type="password" id="new_password" class="form-control" name="new_password" placeholder="New password">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group focused">
-                                        <label class="form-control-label" for="confirm_password">Confirm password</label>
-                                        <input type="password" id="confirm_password" class="form-control" name="password_confirmation" placeholder="Confirm password">
-                                    </div>
-                                </div>
-                            </div> --}}
-                        </div>
-
-                        <!-- Button -->
-                        <div class="pl-lg-4">
-                            <div class="row">
-                                <div class="col text-right mr-3">
-                                    <button type="submit" class="btn btn-primary">Submit Request</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
+                    <h1>Repair Request Form</h1>
                 </div>
-
+                <div class="card-body">
+                <h5 class="card-title" style="color: blue">General Services Unit</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
             </div>
+            </a>
 
+            <div class="custom-card">
+            <div class="card" style="width: 18rem; display: inline-block">
+                <div class="card-body">
+                    <h1>Service Request Form</h1>
+                </div>
+                <div class="card-body">
+                <div class="container mb-4">
+                    <button onclick="location.href = '{{ route('srf-ict') }}';" type="button" class="btn btn-primary btn-block">ICT Unit</button>
+                    <button onclick="location.href = '{{ route('srf-vhc') }}';" type="button" class="btn btn-primary btn-block">for Vehicles</button>
+                </div>
+                <p class="card-text">Fusce vestibulum risus sit amet sapien pulvinar efficitur dapibus vitae turpis. Cras mollis pellentesque ex, vel mollis leo pellentesque ut. Cras pharetra diam non erat tempor condimentum. Maecenas porttitor varius erat, eget molestie odio faucibus at. Sed malesuada lorem at lorem interdum finibus. Nam id ultrices mauris, a suscipit leo.</p>
+                </div>
+            </div>
         </div>
 
+            <div href="#" class="custom-card">
+            <div class="card" style="width: 18rem; display: inline-block">
+                <div class="card-body">
+                    <h1>Work Order Form for Equipment</h1>
+                </div>
+                <div class="card-body">
+                <div class="container mb-4">
+                    <button onclick="location.href = '{{ route('wfe-pm') }}';" type="button" class="btn btn-primary btn-block">Preventive Maintenance</button>
+                    <button onclick="location.href = '{{ route('wfe-lab') }}';" type="button" class="btn btn-primary btn-block">Laboratory</button>
+                </div>
+                <p class="card-text">Aliquam dictum eros et scelerisque dictum. Aliquam nec consectetur dolor. Ut consequat tristique egestas. Sed pharetra mattis nisl, ut sollicitudin dui dignissim at. Praesent neque nulla, luctus ac risus quis, venenatis eleifend nulla. Etiam id nulla semper, pharetra lorem ut, lobortis augue. Duis pulvinar dolor turpis, ut sagittis turpis pulvinar pretium. Phasellus ac nulla a metus egestas efficitur. Ut ipsum metus, pharetra vel tellus sit amet, porttitor suscipit felis.</p>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
 @endsection

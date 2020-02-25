@@ -50,7 +50,8 @@
         <!-- Nav Item - Request -->
         <li class="nav-item {{ Nav::isRoute('request') }}">
             <a class="nav-link" href="{{ route('request') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-paper-plane"></i>
+                {{-- <i class="fa fa-hand-paper-o" aria-hidden="true"></i> --}}
                 <span>{{ __('Request') }}</span></a>
         </li>
 
